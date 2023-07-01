@@ -39,7 +39,7 @@ class Snake:
         self.snake_char = snake_char
         self.tail_char = tail_char
         self.empty_char = empty_char
-
+        self.turns = 0
         row = int(len(self.grid) / 2)
         self.snake_pos = [row, row]
         self.apples = 0
@@ -127,6 +127,8 @@ class Snake:
             self.apples += 1
         if self.grid[y][x] == self.tail_char:
             return True
+
+        self.turns += 1
         return False
 
     def move_right(self):  # move snake right
